@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      "
+    >
+      <form action="Page.php" method="post">
+        <table border="1">
+          <tr>
+            <td colspan="2">
+              <h1
+                style="
+                  color: red;
+                  text-align: center;
+                  margin-bottom: 10px;
+                  padding: 5px;
+                "
+              >
+                Registration Form
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="inf" for="FName">First_Name</label>
+            </td>
+            <td>
+              <input id="FName" type="text" name="First_Name" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="inf" for="LName">Last_Name</label>
+            </td>
+            <td>
+              <input id="LName" type="text" name="Last_Name" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Address</label></td>
+            <td>
+              <textarea name="Address"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="tr">Country</label>
+            </td>
+            <td>
+              <select name="Country" id="tr">
+                <option value="SD">Egypt</option>
+                <option value="Php">Spanin</option>
+                <option value="Fornt_End">Italia</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3"><label>Gender</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input id="male" name="gender" value="Male" type="radio" />
+              <label for="male">Male</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id="female" name="gender" value="Female" type="radio" />
+              <label for="female">Female</label>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2">
+              <label for="" class="main">Favorites</label>
+            </td>
+            <td>
+              <input
+                id="foot"
+                name="Favorites[]"
+                value="Football"
+                type="checkbox"
+              />
+              <label for="foot">Football </label>
+              <input
+                id="bass"
+                name="Favorites[]"
+                value="Basketball"
+                type="checkbox"
+              />
+              <label for="bass">Basketball</label>
+              <input id="gams" name="" value="Gams" type="checkbox" />
+              <label for="gams">Gams </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                id="swim"
+                name="Favorites[]"
+                value="Swimming"
+                type="checkbox"
+              />
+              <label for="swim">Swimming</label>
+              <input
+                id="read"
+                name="Favorites[]"
+                value="Reading"
+                type="checkbox"
+              />
+              <label for="read">Reading</label>
+              <input
+                id="trav"
+                name="Favorites[]"
+                value="Travel"
+                type="checkbox"
+              />
+              <label for="trav">Travel</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="inf" for="user">User Name</label>
+            </td>
+            <td>
+              <input id="user" name="user" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="inf" for="password">Password</label>
+            </td>
+            <td>
+              <input id="password" name="password" type="password" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="inf" for="dep">Department</label>
+            </td>
+            <td>
+              <input
+                id="dep"
+                name="department"
+                type="text"
+                placeholder="OpenSource"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3">Please enter Code</td>
+          </tr>
+          <tr>
+            <td>
+              <p>7Xa6P</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td><input type="text" name="code" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center; align-items: center">
+              <input type="submit" value="Submit" />
+              <input type="reset" value="Reset" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

@@ -37,4 +37,3 @@ function ShowDate($file_name)
 }
 ShowDate("users.txt");
 
-echo "<h1>Hello Here is Data of Users</h1>";

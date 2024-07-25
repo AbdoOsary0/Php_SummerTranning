@@ -69,10 +69,10 @@ if (count($errors) == 0) {
   $image_name = $_FILES['image']['name'];
 
   ### move image to path on the server
-  $uploaded = move_uploaded_file($temp_name, "images/{$image_name}");
+  $uploaded = move_uploaded_file($temp_name, "../images/{$image_name}");
   if ($uploaded) {
     echo "Successfully saved the image";
-    $_SESSION["image_url"] = "images/{$image_name}";
+    $_SESSION["image_url"] = "../images/{$image_name}";
   } else {
     echo "Erro while upload Image";
   }

@@ -76,7 +76,7 @@ if (count($errors) == 0) {
   } else {
     echo "Erro while upload Image";
   }
-  header('Location: home.php');
+  header('Location: profile.php');
 } else {
   $errors_str = json_encode($errors);
   $url = "Location: Form.php?errors={$errors_str}";

@@ -16,8 +16,8 @@ session_start();
   <div class="container">
     <h1>Profile Page</h1>
     <img src="<?php echo $_SESSION['image_url']; ?>" alt="Profile Picture" width="200" height="200">
-    <h1>Hello Mr. <?php echo $_SESSION['name']; ?></h1>
     <div class="info">
+      <h3>Hello Mr. <?php echo $_SESSION['name']; ?></h3>
       <h3>Email: <?php echo $_SESSION['email']; ?></h3>
       <h3>Room Number: <?php echo $_SESSION['roomNum']; ?></h3>
       <h3>Exit: <?php echo $_SESSION['exit']; ?></h3>

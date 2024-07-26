@@ -61,7 +61,7 @@ if (count($errors) == 0) {
   $uploaded = move_uploaded_file($temp_name, "../images/{$image_name}");
   if ($uploaded) {
     echo "Successfully saved the image";
-    $_POST["image_url"] = "../images/{$image_name}";
+    // $_POST["image_url"] = "../images/{$image_name}";
   } else {
     echo "Erro while upload Image";
   }
@@ -80,7 +80,7 @@ if (count($errors) == 0) {
     echo $e->getMessage();
   }
 
-
+  header('Location : ./SelectUsers.php');
   // header('Location: ../php/CradOP/Add.php');
 } else {
   $errors_str = json_encode($errors);

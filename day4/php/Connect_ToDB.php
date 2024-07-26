@@ -56,23 +56,26 @@ function display_to_table($rows)
     ';
   echo '<table class="table">  
         <tr> 
+            <th>Image</th>
             <th>ID</th> 
             <th>Name</th> 
             <th>Password</th> 
             <th>Email</th>
+            <th>RoomNumber</th>
             <th>Show</th> 
             <th>Edit</th> 
             <th>Delete</th> 
         </tr>';
 
   foreach ($rows as $row) {
-    echo $row['image'];
+    // echo $row['image'];
     echo "<tr> 
+            <td><img src=\"{$row['image']}\" alt=\"IMAGE\" width=100 height=100></td>
             <td>{$row['id']}</td>
             <td>{$row['name']}</td>
             <td>{$row['password']}</td>
             <td>{$row['email']}</td>
-            <td><img src=\"{$row['image']}\" alt=\"IMAGE\" width=100 height=100> </td>
+            <td>{$row['roomNumber']}</td>
             <td><a href='' class='btn btn-info'>Show</a></td>
             <td><a href='../register_demo/edit_user.php?id={$row['id']}' class='btn btn-warning'>Edit</a></td>
             <td><a href='../register_demo/delete_user.php?id={$row['id']}' class='btn btn-danger'>Delete</a></td>

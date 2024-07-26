@@ -93,7 +93,6 @@ if (isset($_GET['errors'])) {
       </div>
     </form>
   </div>
-
 </body>
 
 </html>

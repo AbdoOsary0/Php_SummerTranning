@@ -1,6 +1,9 @@
 <?php
+require "./Connect_ToDB.php";
+require "./Data_connection.php";
+$db = connect_to_database($DB_DATABASE, $DB_HOST, $DB_USER, $DB_PASSWORD);
 
-echo "Welcome Server";
+echo "<h1>Welcome Server</h1>";
 $errors = [];
 $old_data = [];
 if (isset($_POST["email"]) && empty($_POST["email"])) {
@@ -50,33 +53,35 @@ if (isset($_FILES['image']) and empty($_FILES['image']['tmp_name'])) {
 }
 
 
-
-
-
-
 if (count($errors) == 0) {
-  echo 'data received';
-  // echo "User logged in successfully";
-  # 1- I will start a session
-  session_start();
-  # then save username in this session
-  $_SESSION['name'] = $_POST['name'];
-  $_SESSION['email'] = $_POST['email'];
-  $_SESSION['roomNum'] = $_POST['roomNum'];
-  $_SESSION['exit'] = $_POST['exit'];
-  # then redirect to homepage
+  echo '<br>data received<br>';
   $temp_name = $_FILES['image']['tmp_name'];
   $image_name = $_FILES['image']['name'];
-
   ### move image to path on the server
   $uploaded = move_uploaded_file($temp_name, "../images/{$image_name}");
   if ($uploaded) {
     echo "Successfully saved the image";
-    $_SESSION["image_url"] = "../images/{$image_name}";
+    $_POST["image_url"] = "../images/{$image_name}";
   } else {
     echo "Erro while upload Image";
   }
-  header('Location: profile.php');
+  try {
+    $insert_quary = "insert into `users`(`name`, `email`, `password`, `roomNumber`,`image`) 
+                     VALUES (:name,:email,:password,:roomNumber ,:image)";
+    $insert_prepare = $db->prepare($insert_quary);
+    $insert_prepare->bindParam('name',  $_POST['name']);
+    $insert_prepare->bindParam('email', $_POST['email']);
+    $insert_prepare->bindParam('password', $_POST['password']);
+    $insert_prepare->bindParam('roomNumber', $_POST['roomNum']);
+    $insert_prepare->bindParam('image',  $_POST['image_url']);
+    $res = $insert_prepare->execute();
+    // var_dump($res);
+  } catch (Exception $e) {
+    echo $e->getMessage();
+  }
+
+
+  // header('Location: ../php/CradOP/Add.php');
 } else {
   $errors_str = json_encode($errors);
   $url = "Location: Form.php?errors={$errors_str}";

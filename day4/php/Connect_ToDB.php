@@ -77,8 +77,8 @@ function display_to_table($rows)
             <td>{$row['email']}</td>
             <td>{$row['roomNumber']}</td>
             <td><a href='' class='btn btn-info'>Show</a></td>
-            <td><a href='../register_demo/edit_user.php?id={$row['id']}' class='btn btn-warning'>Edit</a></td>
-            <td><a href='../register_demo/delete_user.php?id={$row['id']}' class='btn btn-danger'>Delete</a></td>
+            <td><a href='./Demo/edit_user.php?id={$row['id']}' class='btn btn-warning'>Edit</a></td>
+            <td><a href='./Demo/delete_user.php?id={$row['id']}' class='btn btn-danger'>Delete</a></td>
         </tr>";
   }
   echo "</table>";
